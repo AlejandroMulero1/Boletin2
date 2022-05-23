@@ -2,7 +2,7 @@ package principal;
 
 import java.io.File;
 
-import static principal.GestionClientes.altaCliente;
+import static principal.GestionClientes.*;
 
 public class Main {
 
@@ -11,8 +11,8 @@ public class Main {
         Cliente asd= new Cliente("Pepe", "JuanesRodriguez", "1234A", "PaseoPaseado", 5);
 
         try {
-            fichero=new File("CLIENTES.TXT");
-            altaCliente(fichero, asd);
+            fichero=new File("MODIFICACIONES.TXT");
+            insertarModificacionCliente(fichero, asd);
         }
         catch (Exception e){
             System.out.println(e);

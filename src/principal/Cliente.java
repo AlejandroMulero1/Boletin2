@@ -24,12 +24,14 @@ public class Cliente {
     public void setApellidos(String apellidos) {
         if(apellidos.length()>LONGITUD_MAX_NOMBRE)
             apellidos= apellidos.substring(0, LONGITUD_MAX_NOMBRE);
+
         this.apellidos = apellidos;
     }
 
     public void setCif(String cif) {
         if(cif.length()>LONGITUD_MAXIMA_CIF)
             cif= cif.substring(0, LONGITUD_MAXIMA_CIF);
+
         this.cif = cif;
     }
 
