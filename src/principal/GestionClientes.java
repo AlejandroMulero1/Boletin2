@@ -119,25 +119,42 @@ public class GestionClientes {
         return registro;
     }
     public static void insertarModificacionCliente(File fichero, Cliente cliente) {
-        BufferedWriter bw = null;
-        FileWriter fw = null;
+        altaCliente(fichero, cliente);
+    }
+
+    public static void realizarModificaciones(File clientes, File modificaciones){
+        Scanner scClientes= null;
+        Scanner scModificaciones= null;
+        String[] registroModificaciones;
+        String[] registroCliente;
 
         try {
-            fw = new FileWriter(fichero,true);
-            bw = new BufferedWriter(fw);
-            bw.write(cliente.toString() + "\n");
-        } catch (IOException e) {
-            System.out.println(e);
-        } finally {
-            try {
-                if (bw != null)
-                    bw.close();
-                if (fw != null)
-                    fw.close();
-            } catch (IOException ex) {
-                System.out.println(ex);
+            scModificaciones=new Scanner(modificaciones);
+
+            while (scModificaciones.hasNextLine()){
+                registroModificaciones=scModificaciones.nextLine().split(",");
+
+                scClientes=new Scanner(clientes);
+                while (scClientes.hasNextLine()){
+                 registroCliente=scClientes.nextLine().split(",");
+                    if (registroModificaciones[2].equals(registroCliente[2])){
+                        System.out.println("keso");
+                    }
+                }
+                scClientes.close();
             }
+
         }
+        catch (Exception e){
+            System.out.println(e);
+        }
+        finally {
+            if(scClientes!=null)
+                scClientes.close();
+            if(scModificaciones!=null)
+                scModificaciones.close();
+        }
+
     }
     }
 

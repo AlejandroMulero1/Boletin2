@@ -41,6 +41,8 @@ public class Cliente {
         this.direccion = direccion;
     }
 
+
+
     @Override
     public String toString() {
         return nombre +","+ apellidos +","+ cif +","+ categoria +","+ direccion;

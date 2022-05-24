@@ -11,8 +11,9 @@ public class Main {
         Cliente asd= new Cliente("Pepe", "JuanesRodriguez", "1234A", "PaseoPaseado", 5);
 
         try {
-            fichero=new File("MODIFICACIONES.TXT");
-            insertarModificacionCliente(fichero, asd);
+            File clientes= new File("CLIENTES.TXT");
+            File modificaciones= new File("MODIFICACIONES.TXT");
+            realizarModificaciones(clientes, modificaciones);
         }
         catch (Exception e){
             System.out.println(e);
